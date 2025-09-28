@@ -12,26 +12,28 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
-      darkMode: 'class',
-      theme: {
+        darkMode: 'class',
+        theme: {
         extend: {
-          fontFamily: {
+            fontFamily: {
             sans: [
-              'Inter',
-              'system-ui',
-              '-apple-system',
-              'BlinkMacSystemFont',
-              'Segoe UI',
-              'Roboto',
-              'Helvetica Neue',
-              'Arial',
-              'sans-serif'
+                'Inter',                /* Google Fonts */
+                'system-ui',
+                '-apple-system',
+                'BlinkMacSystemFont',
+                'Segoe UI',             /* Windows */
+                'Roboto',               /* Android */
+                'Oxygen', 'Ubuntu',     /* Linux */
+                'Cantarell', 'Fira Sans',
+                'Droid Sans',
+                'Helvetica Neue', 'Arial',
+                'sans-serif'
             ]
-          }
+            }
         }
-      }
+        }
     }
-  </script>
+   </script>
 
   <!-- Кастомные стили -->
   <link rel="stylesheet" href="css/styles.css">

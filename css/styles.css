@@ -2,7 +2,7 @@
 body {
   -webkit-font-smoothing: antialiased; /* Safari, iOS */
   -moz-osx-font-smoothing: grayscale;  /* Firefox на macOS */
-  text-rendering: optimizeLegibility;  /* Улучшенный кернинг */
+  text-rendering: optimizeLegibility;  /* улучшенный кернинг */
   font-feature-settings: "kern";
 }
 
