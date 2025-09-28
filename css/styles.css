@@ -1,4 +1,16 @@
-/* Анимация появления блоков */
+/* ===== Сглаживание текста для разных браузеров ===== */
+body {
+  -webkit-font-smoothing: antialiased; /* Safari, iOS */
+  -moz-osx-font-smoothing: grayscale;  /* Firefox на macOS */
+  text-rendering: optimizeLegibility;  /* Улучшенный кернинг */
+  font-feature-settings: "kern";
+}
+
+h1, h2, h3, h4, h5, h6 {
+  text-rendering: geometricPrecision;
+}
+
+/* ===== Анимация появления блоков ===== */
 .reveal {
   opacity: 0;
   transform: translateY(30px);
@@ -9,17 +21,32 @@
   transform: translateY(0);
 }
 
-/* Анимация модалки */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: scale(0.95);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
+/* ===== Анимации модалки ===== */
+@keyframes modalFadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
 }
-.animate-fadeIn {
-  animation: fadeIn 0.3s ease forwards;
+@keyframes modalFadeOut {
+  from { opacity: 1; transform: scale(1); }
+  to { opacity: 0; transform: scale(0.95); }
+}
+.modal-open { animation: modalFadeIn 0.3s ease forwards; }
+.modal-close { animation: modalFadeOut 0.3s ease forwards; }
+
+/* ===== Анимация фона ===== */
+@keyframes backdropFadeIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes backdropFadeOut { from { opacity: 1; } to { opacity: 0; } }
+.backdrop-open { animation: backdropFadeIn 0.3s ease forwards; }
+.backdrop-close { animation: backdropFadeOut 0.3s ease forwards; }
+
+/* ===== Blur эффект для страницы при открытой модалке ===== */
+.blurred {
+  filter: blur(5px);
+  transition: filter 0.3s ease;
+}
+
+/* ===== Базовый градиент (анимируется JS) ===== */
+.js-gradient {
+  background: linear-gradient(270deg, #3b82f6, #9333ea, #ec4899);
+  background-size: 600% 600%;
 }
