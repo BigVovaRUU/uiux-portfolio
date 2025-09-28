@@ -1,19 +1,23 @@
 // ======================
-// Переключение темы
+// Переключение темы + иконка
 // ======================
 const themeToggle = document.getElementById("themeToggle");
+const html = document.documentElement;
 
 function setTheme(dark) {
   if (dark) {
-    document.documentElement.classList.add("dark");
+    html.classList.add("dark");
     localStorage.setItem("theme", "dark");
+    themeToggle.innerHTML = '<i data-lucide="sun" class="w-5 h-5"></i>';
   } else {
-    document.documentElement.classList.remove("dark");
+    html.classList.remove("dark");
     localStorage.setItem("theme", "light");
+    themeToggle.innerHTML = '<i data-lucide="moon" class="w-5 h-5"></i>';
   }
+  lucide.createIcons(); // обновляем иконку
 }
 
-// Проверяем настройки при загрузке
+// Проверка сохранённых настроек
 if (
   localStorage.getItem("theme") === "dark" ||
   (!localStorage.getItem("theme") &&
@@ -24,9 +28,9 @@ if (
   setTheme(false);
 }
 
-// Клик по кнопке
-themeToggle?.addEventListener("click", () => {
-  setTheme(!document.documentElement.classList.contains("dark"));
+// Клик по кнопке переключателя
+themeToggle.addEventListener("click", () => {
+  setTheme(!html.classList.contains("dark"));
 });
 
 // ======================
@@ -44,22 +48,21 @@ const observer = new IntersectionObserver(
   { threshold: 0.15 }
 );
 
-// Все элементы с классом .reveal
 document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
 
 // ======================
 // Модальное окно для кейсов
 // ======================
 
-// Создаём модальное окно в DOM
+// HTML модалки
 const modalHTML = `
 <div id="caseModal" class="fixed inset-0 hidden items-center justify-center z-50">
   <div class="absolute inset-0 bg-black/50 backdrop-blur-sm"></div>
   <div class="relative bg-white dark:bg-neutral-900 max-w-2xl w-full rounded-2xl shadow-lg p-6 animate-fadeIn">
-    <button id="closeModal" class="absolute top-4 right-4 text-neutral-500 hover:text-neutral-800 dark:hover:text-neutral-200">✖</button>
-    <div id="modalContent">
-      <!-- Контент будет подставляться -->
-    </div>
+    <button id="closeModal" class="absolute top-4 right-4 text-neutral-500 hover:text-neutral-800 dark:hover:text-neutral-200">
+      <i data-lucide="x" class="w-5 h-5"></i>
+    </button>
+    <div id="modalContent"></div>
   </div>
 </div>
 `;
@@ -69,19 +72,25 @@ const modal = document.getElementById("caseModal");
 const modalContent = document.getElementById("modalContent");
 const closeModal = document.getElementById("closeModal");
 
-// Данные кейсов (можно подгрузить с сервера)
+// Данные кейсов
 const casesData = {
   case1: {
     title: "Финтех-приложение",
     desc: "Редизайн онбординга. Сократил шаги с 7 до 4, добавил прогресс-бар и подсказки.",
     results: ["KYC +18%", "Отказы -23%", "Время -32%"],
-    img: "img/case1.jpg",
+    img: "img/case1.png",
   },
   case2: {
     title: "Маркетплейс услуг",
     desc: "Ввел умные фильтры, закрепил сортировку, добавил чипы активных фильтров.",
     results: ["CTR +14%", "Конверсия +9%", "Возвраты -6%"],
-    img: "img/case2.jpg",
+    img: "img/case2.png",
+  },
+  case3: {
+    title: "SaaS-панель аналитики",
+    desc: "Упрощение дашборда, карточки метрик, быстрые фильтры.",
+    results: ["Время до инсайта -27%", "Ошибки -19%", "NPS +11 пп"],
+    img: "img/case3.png",
   },
 };
 
@@ -106,6 +115,7 @@ document.querySelectorAll(".openModal").forEach((btn, i) => {
     `;
     modal.classList.remove("hidden");
     modal.classList.add("flex");
+    lucide.createIcons();
   });
 });
 
@@ -124,6 +134,8 @@ const contactForm = document.querySelector("#contact form");
 contactForm?.addEventListener("submit", (e) => {
   e.preventDefault();
   const data = Object.fromEntries(new FormData(contactForm).entries());
-  alert(`Спасибо, ${data["name"] || "друг"}! Я свяжусь с вами по email: ${data["email"]}`);
+  alert(
+    `Спасибо, ${data["name"] || "друг"}! Я свяжусь с вами по email: ${data["email"]}`
+  );
   contactForm.reset();
 });

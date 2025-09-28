@@ -20,6 +20,9 @@
 
   <!-- Кастомные стили -->
   <link rel="stylesheet" href="css/styles.css">
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body class="bg-white text-neutral-900 dark:bg-neutral-950 dark:text-neutral-100 antialiased">
   
@@ -27,13 +30,13 @@
   <header class="sticky top-0 z-50 backdrop-blur bg-white/70 dark:bg-neutral-950/70 border-b border-neutral-200 dark:border-neutral-800">
     <div class="max-w-7xl mx-auto px-6 flex items-center justify-between h-16">
       <a href="#" class="font-extrabold text-lg bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent">UI/UX Designer</a>
-      <nav class="hidden md:flex gap-8 font-medium">
-        <a href="#about" class="hover:text-blue-500">Обо мне</a>
-        <a href="#cases" class="hover:text-blue-500">Кейсы</a>
-        <a href="#process" class="hover:text-blue-500">Подход</a>
-        <a href="#contact" class="hover:text-blue-500">Контакты</a>
+      <nav class="hidden md:flex gap-8 font-medium items-center">
+        <a href="#about" class="flex items-center gap-2 hover:text-blue-500"><i data-lucide="user" class="w-4 h-4"></i>Обо мне</a>
+        <a href="#cases" class="flex items-center gap-2 hover:text-blue-500"><i data-lucide="layers" class="w-4 h-4"></i>Кейсы</a>
+        <a href="#process" class="flex items-center gap-2 hover:text-blue-500"><i data-lucide="workflow" class="w-4 h-4"></i>Подход</a>
+        <a href="#contact" class="flex items-center gap-2 hover:text-blue-500"><i data-lucide="mail" class="w-4 h-4"></i>Контакты</a>
       </nav>
-      <button id="themeToggle" class="p-2 rounded-md hover:bg-neutral-200 dark:hover:bg-neutral-800">🌓</button>
+      <button id="themeToggle" class="p-2 rounded-md hover:bg-neutral-200 dark:hover:bg-neutral-800"><i data-lucide="moon" class="w-5 h-5"></i></button>
     </div>
   </header>
 
@@ -76,19 +79,23 @@
         <h2 class="text-4xl font-extrabold mb-6">Обо мне</h2>
         <p class="text-neutral-700 dark:text-neutral-300 mb-8">8+ лет опыта. Помогаю продуктам расти за счёт ясной структуры интерфейсов, сильной типографики и микроанимаций.</p>
         <div class="grid grid-cols-2 gap-6">
-          <div class="p-6 rounded-2xl bg-white dark:bg-neutral-900 shadow-inner">
+          <div class="p-6 rounded-2xl bg-white dark:bg-neutral-900 shadow-inner flex flex-col items-center">
+            <i data-lucide="briefcase" class="w-6 h-6 mb-2 text-blue-500"></i>
             <p class="text-3xl font-bold">20+</p>
             <span class="text-neutral-500">проектов</span>
           </div>
-          <div class="p-6 rounded-2xl bg-white dark:bg-neutral-900 shadow-inner">
+          <div class="p-6 rounded-2xl bg-white dark:bg-neutral-900 shadow-inner flex flex-col items-center">
+            <i data-lucide="users" class="w-6 h-6 mb-2 text-purple-500"></i>
             <p class="text-3xl font-bold">10+</p>
             <span class="text-neutral-500">клиентов</span>
           </div>
-          <div class="p-6 rounded-2xl bg-white dark:bg-neutral-900 shadow-inner">
+          <div class="p-6 rounded-2xl bg-white dark:bg-neutral-900 shadow-inner flex flex-col items-center">
+            <i data-lucide="clock" class="w-6 h-6 mb-2 text-pink-500"></i>
             <p class="text-3xl font-bold">8 лет</p>
             <span class="text-neutral-500">опыта</span>
           </div>
-          <div class="p-6 rounded-2xl bg-white dark:bg-neutral-900 shadow-inner">
+          <div class="p-6 rounded-2xl bg-white dark:bg-neutral-900 shadow-inner flex flex-col items-center">
+            <i data-lucide="tools" class="w-6 h-6 mb-2 text-green-500"></i>
             <p class="text-3xl font-bold">Figma</p>
             <span class="text-neutral-500">GA, Hotjar</span>
           </div>
@@ -109,7 +116,7 @@
                class="w-full h-52 object-cover group-hover:scale-105 transition duration-500">
           <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent"></div>
           <div class="absolute bottom-6 left-6 text-white">
-            <h3 class="text-2xl font-bold">Финтех-приложение</h3>
+            <h3 class="text-2xl font-bold flex items-center gap-2"><i data-lucide="smartphone" class="w-5 h-5"></i>Финтех-приложение</h3>
             <p class="text-sm opacity-80">Редизайн онбординга, рост KYC +18%</p>
             <button class="mt-4 px-4 py-2 rounded-lg bg-gradient-to-r from-blue-500 to-purple-600 shadow hover:scale-105 transition">Подробнее</button>
           </div>
@@ -121,7 +128,7 @@
                class="w-full h-52 object-cover group-hover:scale-105 transition duration-500">
           <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent"></div>
           <div class="absolute bottom-6 left-6 text-white">
-            <h3 class="text-2xl font-bold">Маркетплейс услуг</h3>
+            <h3 class="text-2xl font-bold flex items-center gap-2"><i data-lucide="shopping-bag" class="w-5 h-5"></i>Маркетплейс услуг</h3>
             <p class="text-sm opacity-80">Фильтры и UX-каталог, рост конверсии +9%</p>
             <button class="mt-4 px-4 py-2 rounded-lg bg-gradient-to-r from-blue-500 to-purple-600 shadow hover:scale-105 transition">Подробнее</button>
           </div>
@@ -133,7 +140,7 @@
                class="w-full h-52 object-cover group-hover:scale-105 transition duration-500">
           <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent"></div>
           <div class="absolute bottom-6 left-6 text-white">
-            <h3 class="text-2xl font-bold">SaaS-панель аналитики</h3>
+            <h3 class="text-2xl font-bold flex items-center gap-2"><i data-lucide="bar-chart-3" class="w-5 h-5"></i>SaaS-панель аналитики</h3>
             <p class="text-sm opacity-80">Упрощение дашборда, рост NPS +11пп</p>
             <button class="mt-4 px-4 py-2 rounded-lg bg-gradient-to-r from-blue-500 to-purple-600 shadow hover:scale-105 transition">Подробнее</button>
           </div>
@@ -149,16 +156,19 @@
       <h2 class="text-4xl font-extrabold mb-16">Подход</h2>
       <div class="grid md:grid-cols-3 gap-10">
         <div class="p-8 rounded-3xl bg-white dark:bg-neutral-900 shadow-lg hover:scale-105 transition">
+          <i data-lucide="search" class="w-8 h-8 mb-4 text-blue-500 mx-auto"></i>
           <span class="text-sm text-neutral-500">Шаг 1</span>
           <h3 class="text-xl font-semibold mb-4">Исследование</h3>
           <p class="text-neutral-600 dark:text-neutral-300">Интервью, CJM, метрики, постановка задач.</p>
         </div>
         <div class="p-8 rounded-3xl bg-white dark:bg-neutral-900 shadow-lg hover:scale-105 transition">
+          <i data-lucide="pen-tool" class="w-8 h-8 mb-4 text-purple-500 mx-auto"></i>
           <span class="text-sm text-neutral-500">Шаг 2</span>
           <h3 class="text-xl font-semibold mb-4">Прототипирование</h3>
           <p class="text-neutral-600 dark:text-neutral-300">Флоу, вайрфреймы, тестирование гипотез.</p>
         </div>
         <div class="p-8 rounded-3xl bg-white dark:bg-neutral-900 shadow-lg hover:scale-105 transition">
+          <i data-lucide="rocket" class="w-8 h-8 mb-4 text-pink-500 mx-auto"></i>
           <span class="text-sm text-neutral-500">Шаг 3</span>
           <h3 class="text-xl font-semibold mb-4">Внедрение</h3>
           <p class="text-neutral-600 dark:text-neutral-300">Дизайн-система, поддержка релиза.</p>
@@ -173,9 +183,18 @@
       <h2 class="text-4xl font-extrabold mb-6">Свяжемся?</h2>
       <p class="mb-12 text-neutral-600 dark:text-neutral-300">Опишите задачу — предложу решение в течение 24 часов.</p>
       <form class="grid gap-4">
-        <input type="text" name="name" placeholder="Ваше имя" class="p-4 rounded-xl border dark:border-neutral-700 bg-white dark:bg-neutral-950">
-        <input type="email" name="email" placeholder="Email" class="p-4 rounded-xl border dark:border-neutral-700 bg-white dark:bg-neutral-950">
-        <textarea name="message" rows="4" placeholder="Сообщение" class="p-4 rounded-xl border dark:border-neutral-700 bg-white dark:bg-neutral-950"></textarea>
+        <div class="flex items-center gap-2 border rounded-xl p-4 dark:border-neutral-700 bg-white dark:bg-neutral-950">
+          <i data-lucide="user" class="w-5 h-5 text-blue-500"></i>
+          <input type="text" name="name" placeholder="Ваше имя" class="flex-1 bg-transparent outline-none">
+        </div>
+        <div class="flex items-center gap-2 border rounded-xl p-4 dark:border-neutral-700 bg-white dark:bg-neutral-950">
+          <i data-lucide="mail" class="w-5 h-5 text-purple-500"></i>
+          <input type="email" name="email" placeholder="Email" class="flex-1 bg-transparent outline-none">
+        </div>
+        <div class="flex items-start gap-2 border rounded-xl p-4 dark:border-neutral-700 bg-white dark:bg-neutral-950">
+          <i data-lucide="message-square" class="w-5 h-5 text-pink-500 mt-1"></i>
+          <textarea name="message" rows="4" placeholder="Сообщение" class="flex-1 bg-transparent outline-none"></textarea>
+        </div>
         <button class="px-6 py-3 rounded-xl bg-gradient-to-r from-blue-600 to-purple-600 text-white font-medium shadow-lg hover:scale-105 transition">Отправить</button>
       </form>
     </div>
@@ -188,5 +207,8 @@
 
   <!-- Скрипты -->
   <script src="js/app.js"></script>
+  <script>
+    lucide.createIcons();
+  </script>
 </body>
 </html>
